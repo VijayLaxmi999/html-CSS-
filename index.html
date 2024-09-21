@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="music-player">
+        <nav>
+            <div class="circle">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <img src="laxmi.jpg" class="song-img">
+        <h1>Lakshay</h1>
+        <p1>Luis fonsi ft.puerto Rican</p1>
+        <audio controls  id="song">
+            <source src="motion.mp3">
+
+        </audio>
+        <input type="range" value="0" id="progress">
+
+
+        <div class="controls">
+            <div><i class="fa-solid fa-backward"></i></div>
+            <div><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+            <div><i class="fa-sharp fa-solid fa-forward"></i></div>
+
+        </div>
+    
+
+        
+
+    </div>
+</div>
+<script>
+    let progress =document.getElementById("progress");
+    let song =document.getElementById("song");
+    let ctrlIcon=document.getElementById("progress");
+
+
+    song.onloadedmetadata=function(){
+        progress.max=song.duration;
+        progress.value=song.currentTime;
+    }
+    function playPause(){
+        if(ctrlIcon.classList.com.contains("fa-pause")){
+            song.pause();
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-paly");
+        }
+        else{
+            song.play();
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-paly");
+        }
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
